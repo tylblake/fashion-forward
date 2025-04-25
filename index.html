@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fashion Forward</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Fashion Forward</h1>
+    <p>Select your occasion, weather, and size to get a tailored outfit suggestion.</p>
+    <form id="outfit-form">
+      <label for="occasion">Occasion:</label>
+      <select id="occasion" required>
+        <option value="">-- Choose --</option>
+        <option value="work">Work</option>
+        <option value="casual">Casual</option>
+      </select>
+
+      <label for="weather">Weather:</label>
+      <select id="weather" required>
+        <option value="">-- Choose --</option>
+        <option value="sunny">Sunny</option>
+        <option value="rainy">Rainy</option>
+        <option value="cold">Cold</option>
+      </select>
+
+      <label for="size">Size:</label>
+      <select id="size" required>
+        <option value="">-- Choose --</option>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+
+      <button type="submit">Get Suggestion</button>
+    </form>
+
+    <div id="outfit-result" class="result">
+      <!-- Suggestion will appear here -->
+    </div>
+  </div>
+
+  <div id="outfit-image">
+    <!-- Image will appear here -->
+     <!-- <img src="images/BLAZER AND PANTS.png" alt="" class="image"> -->
+  </div>
+</body>
+</html>
