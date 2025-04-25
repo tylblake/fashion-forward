@@ -6,29 +6,29 @@ const outfitSuggestions = {
         large: "Charcoal blazer, white button-down, relaxed-fit slacks."
       },
       rainy: {
-        small: "Waterproof trench coat, button-up shirt, dress pants.",
-        medium: "Rainproof suit jacket, sweater, dark trousers.",
-        large: "Water-resistant overcoat, collared shirt, dress slacks."
+        small: "Rain coat over suit.",
+        medium: "Rain coat over suit.",
+        large: "Rain coat over suit."
       },
       cold: {
-        small: "Wool overcoat, turtleneck sweater, wool dress pants.",
+        small: "A trench coat over suit.",
         medium: "Cashmere blend coat, button-down shirt, thermal trousers.",
         large: "Heavy wool coat, layered sweater, lined dress pants."
       }
     },
     casual: {
       sunny: {
-        small: "Cotton polo shirt and slim-fit jeans.",
+        small: "A polo shirt and jeans.",
         medium: "Short-sleeve henley and chinos.",
         large: "Breathable tee and relaxed-fit shorts."
       },
       rainy: {
-        small: "Light waterproof jacket and denim jeans.",
+        small: "rain jacket over polo and denim jeans.",
         medium: "Denim jacket with hoodie, dark jeans.",
         large: "Rain hoodie and joggers."
       },
       cold: {
-        small: "Quilted vest, long-sleeve tee, jeans.",
+        small: " Button up and jeans.",
         medium: "Puffer jacket, sweatshirt, slim pants.",
         large: "Parkas, thermal shirt, lined trousers."
       }
@@ -37,15 +37,15 @@ const outfitSuggestions = {
 
   outfitImages = {
     work: {
-      sunny: "BLAZER AND PANTS.png",
-      rainy: "Raincoat over suit.png",
-      cold: "trench over suit cold.png",
+      sunny: "blazer_and_pants.png",
+      rainy: "raincoat_over_suit.png",
+      cold: "trench_over_suit_cold.png",
     },
     casual: {
 
-        sunny: "polo shirt and jean.png",
-        rainy: "RAINCOAT OVER POLO AND JEANS.png",
-        cold: "BUTTON UP AND Jean.png",
+        sunny: "polo_shirt_and_jeans.png",
+        rainy: "raincoat_over_polo_and_jeans.png",
+        cold: "button_up_and_jeans.png",
     },
   }
   
@@ -58,10 +58,13 @@ const outfitSuggestions = {
     const occ = document.getElementById('occasion').value;
     const weath = document.getElementById('weather').value;
     const size = document.getElementById('size').value;
+    
   
-    const suggestion = outfitSuggestions[occ]?.[weath]?.[size] ||
+    // const suggestion = outfitSuggestions[occ]?.[weath]?.[size] ||
+    //   "Sorry, no suggestion available for this combination.";
+    const suggestion = outfitSuggestions[occ]?.[weath]?.['small'] ||
       "Sorry, no suggestion available for this combination.";
-  
+    
     document.getElementById('outfit-result').textContent = suggestion;
     document.getElementById('outfit-image').innerHTML = getOutfitImage(outfitImages[occ][weath] || "", "Outfit suggestion image");
   });
